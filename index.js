@@ -1,10 +1,16 @@
 
-exports.travisDeployPubSub = (event, callback) => {
-  console.log(`event: ${JSON.stringify(event)}`)
-  const pubsubMessage = event.data;
-  const name = pubsubMessage.data ? Buffer.from(pubsubMessage.data, 'base64').toString() : 'World';
+const unpack = event => {
+  const payload = event.data
+  return payload.data ? Buffer.from(payload.data, 'base64').toString() : 'World'
+}
 
-  console.log(`Hello, ${name}!`);
+const travisPubSub = (event, callback) => {
+  console.log(`Hello, ${unpack(event)}!`);
 
   callback();
 };
+
+module.exports = {
+  unpack,
+  travisPubSub
+}
