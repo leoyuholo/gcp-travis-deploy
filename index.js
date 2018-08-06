@@ -5,7 +5,7 @@ const unpack = event => {
 }
 
 const travisPubSub = (event, callback) => {
-  console.log(`Hola, ${unpack(event)}!`)
+  console.log(`Halo, ${unpack(event)}!`)
 
   callback()
 }
