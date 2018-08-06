@@ -10,6 +10,7 @@ jobs:
     - stage: deploy
       node_js:
         - "6"
+      install: ignore
       script: sh -x ./push_branch.sh test
 
 notifications:
