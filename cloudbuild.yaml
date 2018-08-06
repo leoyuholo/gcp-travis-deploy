@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/yarn'
-  args: ['install']
+  args: ['install', '--prod']
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'functions', 'deploy', 'travisPubSub', '--trigger-resource', 'travis-deploy', '--trigger-event', 'google.pubsub.topic.publish']

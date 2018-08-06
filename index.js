@@ -1,7 +1,8 @@
+const objGet = require('lodash.get')
 
 const unpack = event => {
-  const payload = event.data
-  return payload.data ? Buffer.from(payload.data, 'base64').toString() : 'World'
+  const payload = objGet(event, 'data.data')
+  return payload ? Buffer.from(payload, 'base64').toString() : 'World'
 }
 
 const travisPubSub = (event, callback) => {
