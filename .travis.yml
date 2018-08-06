@@ -8,6 +8,8 @@ jobs:
         - "6"
       script: npm run travis
     - stage: deploy
+      node_js:
+        - "6"
       script: sh -x ./push_branch.sh test
 
 notifications:
