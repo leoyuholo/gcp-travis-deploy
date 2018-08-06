@@ -6,7 +6,5 @@ node_js:
 
 script: npm run travis
 
-after_success:
-
 notifications:
   email: false
