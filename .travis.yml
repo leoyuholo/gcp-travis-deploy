@@ -6,13 +6,13 @@ node_js:
 
 jobs:
   include:
-    - stage: "Tests"
+    - stage: "Test"
       node_js:
         - "8"
         - "6"
       script: npm run travis
     - stage: deploy
-      script: ./push_branch.sh test
+      script: sh -x ./push_branch.sh test
 
 notifications:
   email: false
