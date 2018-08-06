@@ -5,10 +5,10 @@ const unpack = event => {
 }
 
 const travisPubSub = (event, callback) => {
-  console.log(`Hola, ${unpack(event)}!`);
+  console.log(`Hola, ${unpack(event)}!`)
 
-  callback();
-};
+  callback()
+}
 
 module.exports = {
   unpack,
